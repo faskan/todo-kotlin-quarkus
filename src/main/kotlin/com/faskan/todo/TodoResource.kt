@@ -9,7 +9,7 @@ class TodoResource(val todoRepository: TodoRepository) {
 
     @GET
     fun getAllTodos() : List<Todo>  {
-        return listOf(Todo("1", "name", "description"))
+        return todoRepository.findAll().list()
     }
 
     @POST

@@ -1,3 +1,7 @@
 package com.faskan.todo
 
-data class Todo(val id: String, val name: String, val description: String)
+import io.quarkus.mongodb.panache.MongoEntity
+import io.quarkus.mongodb.panache.kotlin.PanacheMongoEntity
+
+@MongoEntity
+data class Todo(val name: String, val description: String): PanacheMongoEntity()
